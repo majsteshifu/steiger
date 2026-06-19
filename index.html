@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steiger Slovensko — Nádej pre generáciu, ktorá hľadá viac</title>
+  <meta name="description" content="Steiger Slovensko je kresťanská misia zameraná na dnešnú generáciu. Prinášame evanjelium do ulíc, škôl a festivalov. Zapoj sa, daruj alebo sa staň dobrovoľníkom.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Steiger Slovensko — Nádej pre generáciu, ktorá hľadá viac">
+  <meta property="og:description" content="Kresťanská misia pre dnešnú generáciu. Bratislava MVMT.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sk_SK">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Steiger Slovensko, o.z.",
+    "url": "https://steigerslovensko.sk",
+    "email": "slovakia@steiger.org",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hliníky 6997/45",
+      "addressLocality": "Hrnčiarovce nad Parnou",
+      "addressCountry": "SK"
+    },
+    "description": "Kresťanská misia zameraná na dnešnú postmodernú generáciu."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Steiger Slovensko — domov">
+        <svg class="nav__logo-svg" viewBox="0 0 187 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <use href="#steiger-logo"></use>
+        </svg>
+        <span class="nav__logo-tag">Bratislava MVMT</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Hlavná navigácia">
+        <a href="o-nas.html">O nás</a>
+        <a href="aktivity.html">Aktivity</a>
+        <a href="media.html">Médiá</a>
+        <a href="eventy.html">Eventy</a>
+        <a href="#mission">Misia</a>
+        <a href="zapoj-sa.html">Zapoj sa</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+
+      <a href="daruj.html" class="btn btn--red nav__cta">Daruj</a>
+
+      <button class="nav__burger" aria-label="Otvoriť menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" data-parallax style="background-image:linear-gradient(120deg, rgba(10,10,13,0.92) 30%, rgba(19,19,26,0.5) 100%), url('assets/img/photo-2.jpg'); background-size:cover; background-position:center;"></div>
+    <div class="hero__grain"></div>
+    <div class="hero__wrap"></div>
+
+    <div class="hero__tape">
+      <span>✦ STEIGER SLOVENSKO ✦ BRATISLAVA MVMT ✦ STREET ACTION ✦ STEIGER SLOVENSKO ✦ BRATISLAVA MVMT ✦</span>
+    </div>
+    <div class="hero__x" aria-hidden="true">✕</div>
+
+    <div class="hero__content reveal">
+      <p class="hero__eyebrow">/// Kresťanská misia pre dnešnú generáciu</p>
+      <h1 class="hero__title">Nádej pre generáciu,<br>ktorá <span class="text-red">hľadá viac</span></h1>
+      <p class="hero__sub">Prinášame evanjelium tam, kde ho nepočuť — do ulíc, škôl, festivalov a každodenných rozhovorov.</p>
+      <div class="hero__btns">
+        <a href="#support" class="btn btn--red">Podpor misiu</a>
+        <a href="#involve" class="btn btn--outline">Zapoj sa</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll"><span>scroll</span><div class="hero__scroll-line"></div></div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats" id="stats">
+    <div class="stat">
+      <span class="stat__num" data-count="2">0</span>
+      <span class="stat__label">Mestá · BA &amp; TT</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="40" data-suffix="+">0</span>
+      <span class="stat__label">Dobrovoľníkov</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="5">0</span>
+      <span class="stat__label">Jadro tímu</span>
+    </div>
+    <div class="stat">
+      <span class="stat__num" data-count="100" data-suffix="+">0</span>
+      <span class="stat__label">Evanjelizácií / rok</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="about__photo">
+      <div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-5.jpg')">Foto: Spoznaj náš tím</div>
+      <div class="about__photo-tape">FAMILY ✦</div>
+    </div>
+    <div class="about__content reveal">
+      <span class="tag tag--blue">/// Kto sme</span>
+      <h2 class="h2">Misia, ktorá ide<br>za ľuďmi</h2>
+      <p class="about__text">Steiger Slovensko je kresťanská misia zameraná na dnešnú postmodernú generáciu. Slúžime ľuďom, ktorí vnímajú vieru ako vzdialenú alebo irelevantné — a prinášame im evanjelium spôsobom, ktorému rozumejú.</p>
+      <p class="about__quote">„Nečakáme, kým ľudia prídu za nami. My ideme za nimi.“</p>
+      <a href="#mission" class="btn btn--ghost-dark">Spoznaj našu víziu</a>
+    </div>
+  </section>
+
+  <!-- ===== ACTIVITIES ===== -->
+  <section class="activities" id="activities">
+    <div class="activities__head reveal">
+      <span class="tag tag--blue">/// Čo robíme</span>
+      <div class="activities__head-row">
+        <h2 class="h2 text-white">Kde nás nájdeš</h2>
+        <span class="graffiti">STREET ACTION</span>
+      </div>
+    </div>
+
+    <div class="activities__grid">
+      <article class="act-card reveal">
+        <div class="act-card__img"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-3.jpg')">Foto: Outreach</div><span class="act-card__tape">Ulica</span></div>
+        <div class="act-card__body">
+          <h3 class="act-card__title">Kreatívne evanjelizácie</h3>
+          <p class="act-card__desc">Prirodzené rozhovory o živote a Bohu. Hudba, umenie, osobné svedectvá. Tam, kde sú ľudia — parky, kaviarne, festivaly.</p>
+          <a href="#" class="act-card__link">Viac ///</a>
+        </div>
+      </article>
+
+      <article class="act-card reveal">
+        <div class="act-card__img"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-7.jpg')">Foto: Seminár</div><span class="act-card__tape act-card__tape--blue">Cirkev</span></div>
+        <div class="act-card__body">
+          <h3 class="act-card__title">Semináre &amp; tréningy</h3>
+          <p class="act-card__desc">Vybavujeme kresťanov k evanjelizácii. Apologetika, komunikácia evanjelia, budovanie vzťahov mimo cirkev.</p>
+          <a href="#" class="act-card__link">Viac ///</a>
+        </div>
+      </article>
+
+      <article class="act-card reveal">
+        <div class="act-card__img"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-6.jpg')">Foto: Bible Study</div><span class="act-card__tape">Komunita</span></div>
+        <div class="act-card__body">
+          <h3 class="act-card__title">Bible Study pre nenábožných</h3>
+          <p class="act-card__desc">Priestor, kde sa Písmo stáva živým a osobným. Otvorené diskusie, otázky, pochybnosti — všetko vítané.</p>
+          <a href="#" class="act-card__link">Viac ///</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="story" id="story">
+    <div class="story__photo">
+      <div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-1.jpg')">Foto: Príbehy</div>
+      <span class="story__sticker">REAL STORY</span>
+    </div>
+    <div class="story__content reveal">
+      <span class="story__quote-mark">"</span>
+      <p class="story__text">Nikdy som si nemyslela, že ma Boh môže zaujímať. Potom som stretla ľudí zo Steigeru na festivale a začali sme sa rozprávať…</p>
+      <p class="story__name">— Mária, 24 · Bratislava</p>
+      <a href="#" class="btn btn--yellow">Čítaj viac príbehov</a>
+    </div>
+  </section>
+
+  <!-- ===== MISSION / THREE PILLARS ===== -->
+  <section class="mission" id="mission">
+    <div class="mission__head reveal">
+      <span class="tag tag--blue">/// Misia</span>
+      <h2 class="h2 text-white">Trojpilierová vízia</h2>
+      <p class="mission__intro">Každý pilier je nevyhnutný. Spolu tvoria udržateľnú misijnú stratégiu pre Slovensko.</p>
+    </div>
+    <div class="mission__grid">
+      <article class="pillar reveal">
+        <span class="pillar__num">01</span>
+        <h3 class="pillar__title">Zasiahnutie hľadajúcich</h3>
+        <p class="pillar__desc">Aktívne vyhľadávame ľudí mimo cirkev a prinášame im evanjelium tam, kde sú.</p>
+        <ul class="pillar__list">
+          <li>Pravidelný outreach (2× mesačne)</li>
+          <li>Programy učeníctva</li>
+          <li>Festiválová evanjelizácia</li>
+          <li>Follow-up aktivity</li>
+        </ul>
+      </article>
+      <article class="pillar reveal">
+        <span class="pillar__num">02</span>
+        <h3 class="pillar__title">Vystrojenie cirkvi</h3>
+        <p class="pillar__desc">Pomáhame cirkvám a kresťanom stať sa efektívnymi svedkami vo svojom okolí.</p>
+        <ul class="pillar__list">
+          <li>Semináre a prednášky</li>
+          <li>Partnerstvá so zbormi</li>
+          <li>Content pre sociálne médiá</li>
+          <li>Budovanie jednoty kresťanov</li>
+        </ul>
+      </article>
+      <article class="pillar reveal">
+        <span class="pillar__num">03</span>
+        <h3 class="pillar__title">Budovanie tímu</h3>
+        <p class="pillar__desc">Rastieme ako tím — modlitbou, tréningom a vzájomným budovaním.</p>
+        <ul class="pillar__list">
+          <li>Modlitba a pôst</li>
+          <li>Nábor nových členov</li>
+          <li>Steiger Europe / International</li>
+          <li>Misijné tripy</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== INVOLVE ===== -->
+  <section class="involve" id="involve">
+    <span class="involve__tape">✦ JOIN THE REVOLUTION ✦</span>
+    <div class="involve__head reveal">
+      <span class="tag tag--dark">/// Zapoj sa</span>
+      <h2 class="h2 text-dark">Staň sa súčasťou misie</h2>
+    </div>
+    <div class="involve__grid">
+      <article class="inv-card reveal">
+        <span class="inv-card__icon">🙏</span>
+        <h3 class="inv-card__title">Modli sa s nami</h3>
+        <p class="inv-card__desc">Pravidelné modlitebné stretnutia. Odoberaj modlitebné témy a stoj za nami.</p>
+        <a href="#" class="btn btn--dark btn--sm">Zapojiť sa</a>
+      </article>
+      <article class="inv-card reveal">
+        <span class="inv-card__icon">🤝</span>
+        <h3 class="inv-card__title">Dobrovoľníctvo</h3>
+        <p class="inv-card__desc">Eventy, evanjelizácie, médiá, organizácia. Nájdi svoju rolu v tíme.</p>
+        <a href="#" class="btn btn--dark btn--sm">Zapojiť sa</a>
+      </article>
+      <article class="inv-card reveal">
+        <span class="inv-card__icon">🎨</span>
+        <h3 class="inv-card__title">Použi svoje dary</h3>
+        <p class="inv-card__desc">Hudba, video, foto, dizajn, sociálne médiá, vedenie. Tvoje dary majú miesto.</p>
+        <a href="#" class="btn btn--dark btn--sm">Zapojiť sa</a>
+      </article>
+      <article class="inv-card inv-card--accent reveal">
+        <span class="inv-card__icon">💸</span>
+        <h3 class="inv-card__title">Finančná podpora</h3>
+        <p class="inv-card__desc">Tvoj dar umožňuje evanjelizácie, tréningy a misijné tripy po celom Slovensku.</p>
+        <a href="#support" class="btn btn--red btn--sm">Daruj teraz</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== SUPPORT / FINAL CTA ===== -->
+  <section class="cta" id="support">
+    <div class="cta__wrap"></div>
+    <span class="cta__x cta__x--1" aria-hidden="true">✕</span>
+    <span class="cta__x cta__x--2" aria-hidden="true">✕</span>
+    <div class="cta__content reveal">
+      <h2 class="cta__title">Staň sa súčasťou misie,<br>ktorá mení <span class="text-red">Slovensko</span></h2>
+      <p class="cta__sub">Steiger Slovensko existuje, aby mladí ľudia mimo cirkvi mohli počuť a zažiť evanjelium. Potrebujeme teba.</p>
+      <div class="cta__btns">
+        <a href="#" class="btn btn--red">Daruj teraz</a>
+        <a href="#involve" class="btn btn--outline">Zapoj sa</a>
+      </div>
+      <p class="cta__iban">IBAN: SK24 8330 0000 0029 0349 6587 &nbsp;·&nbsp; alebo poukáž 2 % z dane</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <svg class="footer__logo" viewBox="0 0 187 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Steiger">
+          <use href="#steiger-logo-red"></use>
+        </svg>
+        <p class="footer__tagline">Kresťanská misia pre dnešnú generáciu.<br>Bratislava · Trnava · Slovensko</p>
+      </div>
+      <nav class="footer__col" aria-label="Navigácia v pätičke">
+        <h4>Navigácia</h4>
+        <a href="o-nas.html">O nás</a>
+        <a href="aktivity.html">Aktivity</a>
+        <a href="#mission">Misia</a>
+        <a href="zapoj-sa.html">Zapoj sa</a>
+      </nav>
+      <nav class="footer__col" aria-label="Zapojenie">
+        <h4>Zapoj sa</h4>
+        <a href="zapoj-sa.html">Dobrovoľníctvo</a>
+        <a href="aktivity.html">Misijná škola</a>
+        <a href="zapoj-sa.html">Modlitba</a>
+        <a href="daruj.html">Daruj</a>
+      </nav>
+      <div class="footer__col">
+        <h4>Kontakt</h4>
+        <a href="mailto:slovakia@steiger.org">slovakia@steiger.org</a>
+        <span>Hliníky 6997/45<br>Hrnčiarovce nad Parnou</span>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Steiger Slovensko, o.z. · IČO 57534438</span>
+      <span>steigerslovensko.sk</span>
+    </div>
+  </footer>
+
+  <!-- ===== SVG SPRITE (logo definitions) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="steiger-logo">
+        <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M186.076 17.5572C185.427 16.9809 184.5 16.673 183.295 16.6338C181.945 16.7255 180.819 17.6947 179.919 19.5415V31.6243H174.358V12.5472L179.919 11.9578V14.1387C181.336 12.6979 183.064 11.9775 185.103 11.9775C185.751 11.9775 186.367 12.03 186.95 12.1346L186.076 17.5572ZM160.767 26.2215C161.562 26.8109 162.488 27.1056 163.548 27.1056C165.402 27.1056 167.057 26.5819 168.513 25.5338L171.691 28.6773C170.234 30.6421 167.52 31.6243 163.548 31.6243C160.635 31.6243 158.251 30.7077 156.398 28.8738C154.544 27.0402 153.617 24.6826 153.617 21.801C153.617 18.9196 154.544 16.562 156.398 14.7281C158.251 12.8944 160.635 11.9775 163.548 11.9775C166.461 11.9775 168.778 12.8944 170.499 14.7281C172.221 16.562 173.081 18.9196 173.081 21.801V23.7656H159.377C159.509 24.8137 159.973 25.6321 160.767 26.2215ZM167.52 19.8362C167.52 18.7885 167.123 17.9698 166.329 17.3804C165.534 16.791 164.607 16.4963 163.548 16.4963C162.488 16.4963 161.562 16.791 160.767 17.3804C159.973 17.9698 159.576 18.7885 159.576 19.8362H167.52ZM144.212 39.876L143.02 39.994C139.18 39.9153 136.201 38.8281 134.083 36.7326L136.665 33.7855C138.121 34.8333 139.889 35.4227 141.968 35.5538C144.086 35.5538 145.52 35.0626 146.268 34.0802C147.016 33.0979 147.39 32.0173 147.39 30.8385V29.8561C145.907 31.0349 144.185 31.6243 142.226 31.6243C139.18 31.6243 136.896 30.7402 135.374 28.972C133.851 27.2038 133.09 24.8137 133.09 21.801C133.09 18.9196 133.917 16.562 135.572 14.7281C137.227 12.8944 139.578 11.9775 142.623 11.9775C144.874 12.1085 146.463 12.7044 147.39 13.7653V11.9775L152.951 12.5669V30.0526C152.951 32.8032 152.124 35.1019 150.469 36.9487C148.813 38.7955 146.728 39.7711 144.212 39.876ZM147.39 20.3863C147.125 18.1859 145.735 16.896 143.219 16.5159C139.909 16.6338 138.121 18.2645 137.857 21.408C137.989 25.0755 139.776 26.9748 143.219 27.1056C145.735 26.7126 147.125 25.5338 147.39 23.5692V20.3863ZM129.174 10.0128C128.247 10.0128 127.519 9.75091 126.989 9.22688C126.46 8.70316 126.195 8.04806 126.195 7.26221C126.195 6.47636 126.46 5.81818 126.989 5.28767C127.519 4.75723 128.234 4.49202 129.135 4.49202C130.088 4.49202 130.829 4.75723 131.359 5.28767C131.888 5.81818 132.153 6.47636 132.153 7.26221C132.153 8.04806 131.888 8.70316 131.359 9.22688C130.829 9.75091 130.101 10.0128 129.174 10.0128ZM112.651 26.2215C113.446 26.8109 114.372 27.1056 115.432 27.1056C117.285 27.1056 118.94 26.5819 120.397 25.5338L123.575 28.6773C122.118 30.6421 119.404 31.6243 115.432 31.6243C112.519 31.6243 110.135 30.7077 108.282 28.8738C106.428 27.0402 105.501 24.6826 105.501 21.801C105.501 18.9196 106.428 16.562 108.282 14.7281C110.135 12.8944 112.519 11.9775 115.432 11.9775C118.344 11.9775 120.662 12.8944 122.383 14.7281C124.104 16.562 124.965 18.9196 124.965 21.801V23.7656H111.261C111.393 24.8137 111.857 25.6321 112.651 26.2215ZM119.404 19.8362C119.404 18.7885 119.007 17.9698 118.212 17.3804C117.418 16.791 116.491 16.4963 115.432 16.4963C114.372 16.4963 113.446 16.791 112.651 17.3804C111.857 17.9698 111.459 18.7885 111.459 19.8362H119.404ZM102.117 26.3689C102.56 26.7946 103.133 27.0074 103.835 27.0074C104.047 27.0074 104.543 26.9223 105.324 26.7519L106.496 30.701C105.543 31.3168 104.451 31.6243 103.219 31.6243C100.968 31.6243 99.1804 31.0025 97.8566 29.7579C96.5323 28.5137 95.8704 26.9091 95.8704 24.9444V16.4373H92.8912V11.9971H95.8704V6.67281L101.451 6.0834V11.9971H104.431V16.4373H101.451V24.1586C101.451 25.2066 101.673 25.9433 102.117 26.3689ZM86.2596 16.3783C84.9221 16.3783 84.0283 16.624 83.5783 17.1151C83.128 17.6063 83.128 18.0518 83.5783 18.4511C84.0283 18.8508 84.9221 19.1814 86.2596 19.4433C88.2324 19.6269 89.8477 20.1834 91.1058 21.1133C92.3636 22.0435 92.9926 23.661 92.9926 25.9661C92.9926 27.7549 92.251 29.2667 90.7681 30.2884C89.2851 31.31 87.5572 31.8209 85.5843 31.8209C83.704 31.8209 82.1384 31.5557 80.8871 31.0251C79.6358 30.4947 78.5598 29.7844 77.6596 28.8934L80.7382 25.4553C81.6384 26.5162 83.0352 27.132 84.9289 27.3021C86.4514 27.3021 87.4346 27.0564 87.8784 26.5653C88.3218 26.0742 88.3879 25.5829 88.077 25.0918C87.7657 24.6006 86.7164 24.27 84.9289 24.0996C83.3133 23.9164 81.8336 23.4251 80.4899 22.6261C79.1458 21.8274 78.4739 20.3209 78.4739 18.1073C78.4739 16.0772 79.2386 14.5285 80.768 13.4608C82.2973 12.3934 83.8694 11.8596 85.485 11.8596C87.352 11.8596 88.8018 12.0825 89.8347 12.5276C90.8675 12.973 91.8339 13.6345 92.7344 14.5119L89.6361 17.9698C88.7354 16.9089 87.6102 16.3783 86.2596 16.3783ZM46.4225 37.1103C44.7702 38.7447 42.8837 39.3273 40.9279 39.3273C39.3126 39.3273 28.0817 39.3273 26.8299 39.3273C25.578 39.3273 24.8801 38.4202 24.8801 37.3248C24.8801 36.7221 25.0552 36.2911 25.4562 35.8945C25.9567 35.3994 59.5084 2.21012 59.5084 2.21012C61.1162 0.619762 63.0269 0.0646629 64.9307 0.0646629C66.8345 0.0646629 77.8908 0.0646629 79.0287 0.0646629C80.6817 0.0646629 81.7227 2.11984 80.4024 3.42593C78.9326 4.87984 48.722 34.8357 46.4225 37.1103ZM21.5522 37.1103C19.8999 38.7447 18.0133 39.3273 16.0576 39.3273C14.4423 39.3273 3.21138 39.3273 1.95952 39.3273C0.707659 39.3273 0.00976562 38.4202 0.00976562 37.3248C0.00976562 36.7221 0.184858 36.2911 0.585869 35.8945C1.08637 35.3994 34.638 2.21012 34.638 2.21012C36.2458 0.619762 38.1564 0.0646629 40.0604 0.0646629C41.9643 0.0646629 53.0204 0.0646629 54.1583 0.0646629C55.8113 0.0646629 56.8523 2.11984 55.5321 3.42593C54.0623 4.87984 23.8516 34.8357 21.5522 37.1103ZM131.955 31.6243H126.394V11.9578H131.955V31.6243Z"></path>
+      </g>
+      <g id="steiger-logo-red">
+        <path fill="#F11D00" fill-rule="evenodd" clip-rule="evenodd" d="M186.076 17.5572C185.427 16.9809 184.5 16.673 183.295 16.6338C181.945 16.7255 180.819 17.6947 179.919 19.5415V31.6243H174.358V12.5472L179.919 11.9578V14.1387C181.336 12.6979 183.064 11.9775 185.103 11.9775C185.751 11.9775 186.367 12.03 186.95 12.1346L186.076 17.5572ZM160.767 26.2215C161.562 26.8109 162.488 27.1056 163.548 27.1056C165.402 27.1056 167.057 26.5819 168.513 25.5338L171.691 28.6773C170.234 30.6421 167.52 31.6243 163.548 31.6243C160.635 31.6243 158.251 30.7077 156.398 28.8738C154.544 27.0402 153.617 24.6826 153.617 21.801C153.617 18.9196 154.544 16.562 156.398 14.7281C158.251 12.8944 160.635 11.9775 163.548 11.9775C166.461 11.9775 168.778 12.8944 170.499 14.7281C172.221 16.562 173.081 18.9196 173.081 21.801V23.7656H159.377C159.509 24.8137 159.973 25.6321 160.767 26.2215ZM167.52 19.8362C167.52 18.7885 167.123 17.9698 166.329 17.3804C165.534 16.791 164.607 16.4963 163.548 16.4963C162.488 16.4963 161.562 16.791 160.767 17.3804C159.973 17.9698 159.576 18.7885 159.576 19.8362H167.52ZM144.212 39.876L143.02 39.994C139.18 39.9153 136.201 38.8281 134.083 36.7326L136.665 33.7855C138.121 34.8333 139.889 35.4227 141.968 35.5538C144.086 35.5538 145.52 35.0626 146.268 34.0802C147.016 33.0979 147.39 32.0173 147.39 30.8385V29.8561C145.907 31.0349 144.185 31.6243 142.226 31.6243C139.18 31.6243 136.896 30.7402 135.374 28.972C133.851 27.2038 133.09 24.8137 133.09 21.801C133.09 18.9196 133.917 16.562 135.572 14.7281C137.227 12.8944 139.578 11.9775 142.623 11.9775C144.874 12.1085 146.463 12.7044 147.39 13.7653V11.9775L152.951 12.5669V30.0526C152.951 32.8032 152.124 35.1019 150.469 36.9487C148.813 38.7955 146.728 39.7711 144.212 39.876ZM147.39 20.3863C147.125 18.1859 145.735 16.896 143.219 16.5159C139.909 16.6338 138.121 18.2645 137.857 21.408C137.989 25.0755 139.776 26.9748 143.219 27.1056C145.735 26.7126 147.125 25.5338 147.39 23.5692V20.3863ZM129.174 10.0128C128.247 10.0128 127.519 9.75091 126.989 9.22688C126.46 8.70316 126.195 8.04806 126.195 7.26221C126.195 6.47636 126.46 5.81818 126.989 5.28767C127.519 4.75723 128.234 4.49202 129.135 4.49202C130.088 4.49202 130.829 4.75723 131.359 5.28767C131.888 5.81818 132.153 6.47636 132.153 7.26221C132.153 8.04806 131.888 8.70316 131.359 9.22688C130.829 9.75091 130.101 10.0128 129.174 10.0128ZM112.651 26.2215C113.446 26.8109 114.372 27.1056 115.432 27.1056C117.285 27.1056 118.94 26.5819 120.397 25.5338L123.575 28.6773C122.118 30.6421 119.404 31.6243 115.432 31.6243C112.519 31.6243 110.135 30.7077 108.282 28.8738C106.428 27.0402 105.501 24.6826 105.501 21.801C105.501 18.9196 106.428 16.562 108.282 14.7281C110.135 12.8944 112.519 11.9775 115.432 11.9775C118.344 11.9775 120.662 12.8944 122.383 14.7281C124.104 16.562 124.965 18.9196 124.965 21.801V23.7656H111.261C111.393 24.8137 111.857 25.6321 112.651 26.2215ZM119.404 19.8362C119.404 18.7885 119.007 17.9698 118.212 17.3804C117.418 16.791 116.491 16.4963 115.432 16.4963C114.372 16.4963 113.446 16.791 112.651 17.3804C111.857 17.9698 111.459 18.7885 111.459 19.8362H119.404ZM102.117 26.3689C102.56 26.7946 103.133 27.0074 103.835 27.0074C104.047 27.0074 104.543 26.9223 105.324 26.7519L106.496 30.701C105.543 31.3168 104.451 31.6243 103.219 31.6243C100.968 31.6243 99.1804 31.0025 97.8566 29.7579C96.5323 28.5137 95.8704 26.9091 95.8704 24.9444V16.4373H92.8912V11.9971H95.8704V6.67281L101.451 6.0834V11.9971H104.431V16.4373H101.451V24.1586C101.451 25.2066 101.673 25.9433 102.117 26.3689ZM86.2596 16.3783C84.9221 16.3783 84.0283 16.624 83.5783 17.1151C83.128 17.6063 83.128 18.0518 83.5783 18.4511C84.0283 18.8508 84.9221 19.1814 86.2596 19.4433C88.2324 19.6269 89.8477 20.1834 91.1058 21.1133C92.3636 22.0435 92.9926 23.661 92.9926 25.9661C92.9926 27.7549 92.251 29.2667 90.7681 30.2884C89.2851 31.31 87.5572 31.8209 85.5843 31.8209C83.704 31.8209 82.1384 31.5557 80.8871 31.0251C79.6358 30.4947 78.5598 29.7844 77.6596 28.8934L80.7382 25.4553C81.6384 26.5162 83.0352 27.132 84.9289 27.3021C86.4514 27.3021 87.4346 27.0564 87.8784 26.5653C88.3218 26.0742 88.3879 25.5829 88.077 25.0918C87.7657 24.6006 86.7164 24.27 84.9289 24.0996C83.3133 23.9164 81.8336 23.4251 80.4899 22.6261C79.1458 21.8274 78.4739 20.3209 78.4739 18.1073C78.4739 16.0772 79.2386 14.5285 80.768 13.4608C82.2973 12.3934 83.8694 11.8596 85.485 11.8596C87.352 11.8596 88.8018 12.0825 89.8347 12.5276C90.8675 12.973 91.8339 13.6345 92.7344 14.5119L89.6361 17.9698C88.7354 16.9089 87.6102 16.3783 86.2596 16.3783ZM46.4225 37.1103C44.7702 38.7447 42.8837 39.3273 40.9279 39.3273C39.3126 39.3273 28.0817 39.3273 26.8299 39.3273C25.578 39.3273 24.8801 38.4202 24.8801 37.3248C24.8801 36.7221 25.0552 36.2911 25.4562 35.8945C25.9567 35.3994 59.5084 2.21012 59.5084 2.21012C61.1162 0.619762 63.0269 0.0646629 64.9307 0.0646629C66.8345 0.0646629 77.8908 0.0646629 79.0287 0.0646629C80.6817 0.0646629 81.7227 2.11984 80.4024 3.42593C78.9326 4.87984 48.722 34.8357 46.4225 37.1103ZM21.5522 37.1103C19.8999 38.7447 18.0133 39.3273 16.0576 39.3273C14.4423 39.3273 3.21138 39.3273 1.95952 39.3273C0.707659 39.3273 0.00976562 38.4202 0.00976562 37.3248C0.00976562 36.7221 0.184858 36.2911 0.585869 35.8945C1.08637 35.3994 34.638 2.21012 34.638 2.21012C36.2458 0.619762 38.1564 0.0646629 40.0604 0.0646629C41.9643 0.0646629 53.0204 0.0646629 54.1583 0.0646629C55.8113 0.0646629 56.8523 2.11984 55.5321 3.42593C54.0623 4.87984 23.8516 34.8357 21.5522 37.1103ZM131.955 31.6243H126.394V11.9578H131.955V31.6243Z"></path>
+      </g>
+    </defs>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>

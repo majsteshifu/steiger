@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daruj — Steiger Slovensko</title>
+  <meta name="description" content="Podpor misiu Steiger Slovensko. Jednorazový alebo pravidelný dar, IBAN, 2 % z dane. Tvoj dar mení životy mladých ľudí.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Steiger Slovensko — domov">
+        <img src="assets/Steiger_Logo.svg" alt="Steiger" class="nav__logo-img">
+        <span class="nav__logo-tag">Bratislava MVMT</span>
+      </a>
+      <nav class="nav__links" aria-label="Hlavná navigácia">
+        <a href="o-nas.html">O nás</a>
+        <a href="aktivity.html">Aktivity</a>
+        <a href="media.html">Médiá</a>
+        <a href="eventy.html">Eventy</a>
+        <a href="index.html#mission">Misia</a>
+        <a href="zapoj-sa.html">Zapoj sa</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <a href="daruj.html" class="btn btn--red nav__cta">Daruj</a>
+      <button class="nav__burger" aria-label="Otvoriť menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero__bg" style="background:linear-gradient(120deg, rgba(10,10,13,0.9) 25%, rgba(19,19,26,0.55) 100%), url('assets/img/photo-8.jpg') center/cover;"></div>
+    <div class="page-hero__grain"></div>
+    <span class="page-hero__watermark">FUEL</span>
+    <div class="page-hero__tape"><span>✦ FUEL THE MVMT ✦</span></div>
+    <div class="page-hero__inner">
+      <span class="tag tag--blue">/// Finančná podpora</span>
+      <h1 class="page-hero__title">Tvoj dar<br>mení životy</h1>
+      <p class="page-hero__sub">Steiger Slovensko existuje, aby mladí ľudia mimo cirkvi mohli počuť a zažiť evanjelium.</p>
+    </div>
+  </section>
+
+  <section class="section section--almost">
+    <div class="section__inner donate">
+      <!-- IMPACT -->
+      <div class="reveal">
+        <span class="tag tag--blue">/// Dopad tvojho daru</span>
+        <h2 class="h2 text-white">Čo umožní<br>tvoja podpora?</h2>
+        <div style="margin-top:24px;">
+          <div class="donate__impact-item"><span class="donate__impact-icon">🙏</span><span class="donate__impact-text">Misijné eventy a uličné evanjelizácie</span></div>
+          <div class="donate__impact-item"><span class="donate__impact-icon">📚</span><span class="donate__impact-text">Učeníctvo a diskipulship aktivity</span></div>
+          <div class="donate__impact-item"><span class="donate__impact-icon">🎬</span><span class="donate__impact-text">Video a digitálny obsah pre mladých</span></div>
+          <div class="donate__impact-item"><span class="donate__impact-icon">🏫</span><span class="donate__impact-text">Tréningy a semináre pre cirkvi</span></div>
+          <div class="donate__impact-item"><span class="donate__impact-icon">👥</span><span class="donate__impact-text">Budovanie tímov po celom Slovensku</span></div>
+        </div>
+        <div style="margin-top:22px;padding:14px;background:rgba(0,242,242,0.06);border-left:3px solid var(--electric-blue);">
+          <div style="font-size:11px;color:var(--electric-blue);text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:4px;">Daňové zvýhodnenie</div>
+          <div style="font-size:13px;color:var(--text-muted);">Môžeš poukázať 2 % z dane. Ušetríš štátu, pomôžeš misii.</div>
+        </div>
+      </div>
+
+      <!-- DONATE BOX -->
+      <div class="donate__box reveal">
+        <span class="tag tag--blue">/// Daruj</span>
+        <h3 style="font-weight:800;font-size:22px;text-transform:uppercase;margin-bottom:8px;">Zvoľ sumu daru</h3>
+        <div class="toggle">
+          <button class="is-active" data-toggle="once">Jednorazovo</button>
+          <button data-toggle="monthly">Mesačne</button>
+        </div>
+        <div class="amounts">
+          <button class="amount">5 €</button>
+          <button class="amount is-active">15 €</button>
+          <button class="amount">25 €</button>
+          <button class="amount">50 €</button>
+          <button class="amount">Vlastná</button>
+        </div>
+        <a href="#" class="btn btn--red" id="donateBtn" style="width:100%;text-align:center;padding:16px;">Darovať 15 € jednorazovo →</a>
+        <div class="iban-box">
+          <div class="iban-box__label">Organizácia — Steiger Slovensko, o.z.</div>
+          <div class="iban-box__num">SK24 8330 0000 0029 0349 6587</div>
+          <div style="margin-top:10px;"><div class="iban-box__label">BIC / SWIFT</div><div class="iban-box__num">FIOZSKBAXXX</div></div>
+        </div>
+        <p style="margin-top:14px;font-size:12px;color:rgba(255,255,255,0.4);">Individuálna podpora misionárov (Katka, Kika a ďalší) má vlastné IBAN účty — napíš nám pre detaily.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <h2 class="cta-strip__title">Ďakujeme, že si súčasťou</h2>
+    <div class="cta-strip__btns">
+      <a href="zapoj-sa.html" class="btn btn--white">Ďalšie spôsoby zapojenia</a>
+      <a href="kontakt.html" class="btn btn--outline">Mám otázku</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/Steiger_Logo.svg" alt="Steiger" class="footer__logo-img">
+        <p class="footer__tagline" style="margin-top:16px;">Kresťanská misia pre dnešnú generáciu.<br>Bratislava · Trnava · Slovensko</p>
+      </div>
+      <nav class="footer__col"><h4>Navigácia</h4><a href="o-nas.html">O nás</a><a href="aktivity.html">Aktivity</a><a href="index.html#mission">Misia</a><a href="zapoj-sa.html">Zapoj sa</a></nav>
+      <nav class="footer__col"><h4>Zapoj sa</h4><a href="zapoj-sa.html">Dobrovoľníctvo</a><a href="zapoj-sa.html">Modlitba</a><a href="daruj.html">Daruj</a></nav>
+      <div class="footer__col"><h4>Kontakt</h4><a href="mailto:slovakia@steiger.org">slovakia@steiger.org</a><span>Hliníky 6997/45<br>Hrnčiarovce nad Parnou</span><div class="footer__social"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="YouTube">YT</a><a href="#" aria-label="WhatsApp">WA</a></div></div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 Steiger Slovensko, o.z. · IČO 57534438</span><span>steigerslovensko.sk</span></div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Donate box interactivity
+    (function () {
+      var amount = '15 €', mode = 'jednorazovo';
+      var btn = document.getElementById('donateBtn');
+      function update() {
+        var label = amount === 'Vlastná' ? 'Darovať' : 'Darovať ' + amount;
+        btn.textContent = label + ' ' + mode + ' →';
+      }
+      document.querySelectorAll('.amount').forEach(function (a) {
+        a.addEventListener('click', function () {
+          document.querySelectorAll('.amount').forEach(function (x) { x.classList.remove('is-active'); });
+          a.classList.add('is-active');
+          amount = a.textContent.trim();
+          update();
+        });
+      });
+      document.querySelectorAll('.toggle button').forEach(function (t) {
+        t.addEventListener('click', function () {
+          document.querySelectorAll('.toggle button').forEach(function (x) { x.classList.remove('is-active'); });
+          t.classList.add('is-active');
+          mode = t.dataset.toggle === 'monthly' ? 'mesačne' : 'jednorazovo';
+          update();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
