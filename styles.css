@@ -7,6 +7,7 @@
   /* Brand colors (manual + logo) */
   --neon-red: #F11D00;
   --shaded-yellow: #F2F200;
+  --brand-yellow: #FDCB4A;
   --electric-blue: #00F2F2;
   --deep-orange: #F26500;
   --indie-blue: #200040;
@@ -83,6 +84,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 1.5px;
   padding: 14px 28px;
   border: 2px solid transparent;
+  border-radius: 999px;
   cursor: pointer;
   transition: transform .2s var(--ease), background .2s, color .2s, border-color .2s;
 }
@@ -142,7 +144,9 @@ a { color: inherit; text-decoration: none; }
   font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
   color: rgba(255,255,255,0.75); transition: color .2s;
 }
-.nav__links a:hover { color: var(--electric-blue); }
+.nav__links a:hover,
+.nav__links a:focus,
+.nav__links a.is-active { color: var(--brand-yellow); }
 .nav__cta { padding: 9px 20px; }
 .nav__burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
 .nav__burger span { width: 24px; height: 2px; background: var(--white); transition: .3s; }
@@ -187,7 +191,7 @@ a { color: inherit; text-decoration: none; }
 .hero__content { position: relative; z-index: 5; max-width: 640px; }
 .hero__eyebrow {
   font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px;
-  color: var(--electric-blue); margin-bottom: 18px;
+  color: var(--neon-red); margin-bottom: 18px;
 }
 .hero__title {
   font-weight: 900; font-size: clamp(38px, 7vw, 72px); line-height: 0.98;

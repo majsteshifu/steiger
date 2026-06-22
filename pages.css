@@ -96,7 +96,7 @@ body { padding-top: 0; }
 .amount {
   padding: 12px 22px; border: 2px solid rgba(255,255,255,0.2); background: transparent;
   color: var(--white); font-family: 'Montserrat'; font-size: 15px; font-weight: 700; cursor: pointer;
-  transition: all .2s;
+  border-radius: 999px; transition: all .2s;
 }
 .amount:hover, .amount.is-active { background: var(--neon-red); border-color: var(--neon-red); }
 .toggle { display: flex; gap: 10px; margin-bottom: 20px; }
@@ -104,6 +104,7 @@ body { padding-top: 0; }
   flex: 1; padding: 11px; border: 2px solid rgba(255,255,255,0.2); background: transparent;
   color: rgba(255,255,255,0.7); font-family: 'Montserrat'; font-size: 11px; font-weight: 800;
   text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all .2s;
+  border-radius: 999px;
 }
 .toggle button.is-active { background: var(--neon-red); border-color: var(--neon-red); color: #fff; }
 .iban-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 16px; margin-top: 16px; }
