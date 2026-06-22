@@ -49,9 +49,9 @@ body { padding-top: 0; }
 .section--white .lead, .section--yellow .lead { color: var(--text-muted-dark); }
 
 /* Two-column split */
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 72px); align-items: center; }
-.split__photo { min-height: 360px; position: relative; }
-.split__photo .photo-ph { border-radius: 0; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 72px); align-items: stretch; }
+.split__photo { position: relative; min-height: 460px; border-radius: 0; overflow: hidden; }
+.split__photo .photo-ph { position: absolute; inset: 0; border-radius: 0; }
 
 /* ===== VALUES GRID (7 hodnôt) ===== */
 .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
