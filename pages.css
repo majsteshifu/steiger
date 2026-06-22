@@ -4,7 +4,7 @@
    ============================================ */
 
 /* Logo as <img>, recolored white for dark nav */
-.nav__logo-img { height: 24px; width: auto; }
+.nav__logo-img { height: 40px; width: auto; }
 .footer__logo-img { height: 28px; width: auto; }
 
 /* Push content below fixed nav */
