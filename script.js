@@ -101,3 +101,104 @@
     window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
   }
 })();
+
+/* ============================================
+   COOKIE CONSENT (GDPR / ePrivacy)
+   - nevyhnutné cookies vždy; YouTube (marketing) len po súhlase
+   ============================================ */
+(function () {
+  'use strict';
+  var KEY = 'steiger_consent';
+
+  function getConsent() {
+    try { return JSON.parse(localStorage.getItem(KEY)); } catch (e) { return null; }
+  }
+  function setConsent(media) {
+    try { localStorage.setItem(KEY, JSON.stringify({ essential: true, media: !!media, ts: Date.now() })); } catch (e) {}
+  }
+
+  // Load consent-gated YouTube embeds
+  function loadVideos() {
+    document.querySelectorAll('.video-embed[data-yt]').forEach(function (el) {
+      if (el.querySelector('iframe')) return;
+      var id = el.getAttribute('data-yt');
+      var list = el.getAttribute('data-yt-list');
+      var title = el.getAttribute('data-yt-title') || 'Video';
+      var src = 'https://www.youtube-nocookie.com/embed/' + id + (list ? ('?list=' + list) : '');
+      var f = document.createElement('iframe');
+      f.src = src; f.title = title; f.loading = 'lazy';
+      f.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      f.setAttribute('allowfullscreen', '');
+      el.innerHTML = '';
+      el.appendChild(f);
+    });
+  }
+
+  // Placeholder shown until media consent is given
+  function showPlaceholders() {
+    document.querySelectorAll('.video-embed[data-yt]').forEach(function (el) {
+      if (el.querySelector('iframe') || el.querySelector('.video-embed__ph')) return;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'video-embed__ph';
+      btn.innerHTML = '<span>Prehrať video</span><small>Kliknutím súhlasíš s načítaním obsahu z YouTube (Google), ktorý môže používať cookies.</small>';
+      btn.addEventListener('click', function () {
+        setConsent(true);
+        loadVideos();
+        hideBanner();
+      });
+      el.appendChild(btn);
+    });
+  }
+
+  // Banner
+  var banner;
+  function buildBanner() {
+    banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Súhlas s cookies');
+    banner.innerHTML =
+      '<div class="cookie-banner__inner">' +
+        '<div class="cookie-banner__text">' +
+          '<strong>Rešpektujeme tvoje súkromie</strong>' +
+          'Nevyhnutné cookies používame na fungovanie stránky. So súhlasom načítame aj vložený obsah z YouTube (Google). ' +
+          'Viac v <a href="cookies.html">zásadách používania cookies</a>.' +
+        '</div>' +
+        '<div class="cookie-banner__actions">' +
+          '<button type="button" class="btn btn--outline" data-cc="reject">Odmietnuť</button>' +
+          '<button type="button" class="btn btn--red" data-cc="accept">Prijať všetko</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(banner);
+    banner.querySelector('[data-cc="accept"]').addEventListener('click', function () {
+      setConsent(true); loadVideos(); hideBanner();
+    });
+    banner.querySelector('[data-cc="reject"]').addEventListener('click', function () {
+      setConsent(false); hideBanner();
+    });
+  }
+  function showBanner() { if (!banner) buildBanner(); banner.classList.add('is-open'); }
+  function hideBanner() { if (banner) banner.classList.remove('is-open'); }
+
+  // Footer link to reopen settings
+  function addFooterLink() {
+    document.querySelectorAll('.footer__bottom').forEach(function (fb) {
+      if (fb.querySelector('.footer__cookies')) return;
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'footer__cookies'; b.textContent = 'Nastavenia cookies';
+      b.addEventListener('click', showBanner);
+      fb.appendChild(b);
+    });
+  }
+
+  // Expose for in-page "Nastavenia cookies" triggers (e.g. cookies.html)
+  window.__ccOpen = showBanner;
+
+  // Init
+  var c = getConsent();
+  if (c && c.media) { loadVideos(); } else { showPlaceholders(); }
+  if (!c) { showBanner(); }
+  addFooterLink();
+})();
