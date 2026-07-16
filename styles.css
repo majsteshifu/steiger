@@ -613,3 +613,39 @@ body { background: var(--cream); color: var(--ink); }
   margin-bottom: 8px; transition: background .2s, transform .2s var(--ease);
 }
 .footer__material:hover { background: #ff2200; transform: translateY(-2px); color: #fff !important; }
+
+/* ===== SLOGANOVÁ PÁSKA (brandový predel) ===== */
+.slogan-tape {
+  position: relative;
+  width: 112vw; margin-left: 50%; transform: translateX(-50%) rotate(-1.2deg);
+  background: var(--neon-red);
+  padding: 12px 0;
+  overflow: hidden; white-space: nowrap;
+  box-shadow: 0 8px 30px rgba(26,19,19,0.25);
+  z-index: 3;
+}
+/* grunge — jemné narušenie plochy, aby páska nepôsobila digitálne čisto */
+.slogan-tape::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply; opacity: 0.28;
+}
+.slogan-tape__track {
+  display: inline-block;
+  animation: marquee 70s linear infinite;
+}
+.slogan-tape__item {
+  font-family: 'Big Shoulders Stencil Display', 'Bebas Neue', sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 3.6vw, 46px);
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 0 26px;
+}
+.slogan-tape__item.is-white { color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slogan-tape__track { animation: none; }
+}
