@@ -261,9 +261,18 @@
     current = btn;
   }
 
+  // Myš -> opis sa zobrazí po nadídení. Dotyk -> klik (hover na mobile neexistuje).
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
   team.querySelectorAll('.member').forEach(function (btn) {
+    if (canHover) {
+      btn.addEventListener('mouseenter', function () { open(btn); });
+    }
+    // klávesnica (Tab) -> tiež zobrazí opis
+    btn.addEventListener('focus', function () { open(btn); });
     btn.addEventListener('click', function () {
-      if (current === btn) { close(); return; }   // druhý klik zavrie
+      if (canHover) { open(btn); return; }        // myš: klik len otvorí
+      if (current === btn) { close(); return; }   // dotyk: druhý klik zavrie
       open(btn);
     });
   });
