@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,400..900&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="styles.css?v=20260629">
+  <link rel="stylesheet" href="pages.css?v=20260629">
 </head>
 <body>
 
@@ -62,12 +62,52 @@
       <span class="tag tag--blue">/// Náš tím</span>
       <h2 class="h2 text-white">Ľudia za misiou</h2>
       <p class="lead" style="margin-top:12px;">Týždenná Bible Study v Trnave, pravidelný outreach v Bratislave — a tím, ktorý za tým stojí.</p>
-      <div class="team">
-        <div class="member reveal"><div class="member__photo"><div class="photo-ph">Foto</div></div><div class="member__name">Katka Matejková</div><div class="member__role">Bratislava</div></div>
-        <div class="member reveal"><div class="member__photo"><div class="photo-ph">Foto</div></div><div class="member__name">Kika Jurík</div><div class="member__role">Bratislava · Trnava</div></div>
-        <div class="member reveal"><div class="member__photo"><div class="photo-ph">Foto</div></div><div class="member__name">Saška</div><div class="member__role">Tím</div></div>
-        <div class="member reveal"><div class="member__photo"><div class="photo-ph">Foto</div></div><div class="member__name">Tomi</div><div class="member__role">Tím</div></div>
-        <div class="member reveal"><div class="member__photo"><div class="photo-ph">Foto</div></div><div class="member__name">Alis</div><div class="member__role">Tím</div></div>
+      <!-- Klikni na člena -> opis sa zobrazí pod radom fotiek.
+           FOTKY: nahraj do assets/img/ a nahraď <span class="photo-ph">Foto</span>
+           za <span class="photo-ph photo-ph--img" style="background-image:url('assets/img/MENO.jpg')"></span> -->
+      <div class="team" id="team">
+        <button type="button" class="member reveal" data-bio="bio-katka" aria-expanded="false" aria-controls="team-bio">
+          <span class="member__photo"><span class="photo-ph">Foto</span></span>
+          <span class="member__name">Katka</span>
+          <span class="member__role">Vedúca tímu</span>
+        </button>
+        <button type="button" class="member reveal" data-bio="bio-kika" aria-expanded="false" aria-controls="team-bio">
+          <span class="member__photo"><span class="photo-ph">Foto</span></span>
+          <span class="member__name">Kika</span>
+          <span class="member__role">Kreatívne evanjelizácie &amp; učeníctvo</span>
+        </button>
+        <button type="button" class="member reveal" data-bio="bio-saska" aria-expanded="false" aria-controls="team-bio">
+          <span class="member__photo"><span class="photo-ph">Foto</span></span>
+          <span class="member__name">Saška</span>
+          <span class="member__role">Komunikácia &amp; vizuálna identita</span>
+        </button>
+        <button type="button" class="member reveal" data-bio="bio-katka2" aria-expanded="false" aria-controls="team-bio">
+          <span class="member__photo"><span class="photo-ph">Foto</span></span>
+          <span class="member__name">Katka</span>
+          <span class="member__role">Evanjelizačné nástroje</span>
+        </button>
+        <button type="button" class="member reveal" data-bio="bio-tomi" aria-expanded="false" aria-controls="team-bio">
+          <span class="member__photo"><span class="photo-ph">Foto</span></span>
+          <span class="member__name">Tomi</span>
+          <span class="member__role">Evanjelista</span>
+        </button>
+      </div>
+
+      <!-- Panel s opisom (napĺňa sa cez JS) -->
+      <div class="team-bio" id="team-bio" hidden aria-live="polite">
+        <button type="button" class="team-bio__close" aria-label="Zavrieť opis">✕</button>
+        <h3 class="team-bio__name"></h3>
+        <p class="team-bio__role"></p>
+        <p class="team-bio__text"></p>
+      </div>
+
+      <!-- Texty opisov (skryté, ale čitateľné pre vyhľadávače) -->
+      <div class="team-bios" hidden>
+        <div id="bio-katka" data-name="Katka" data-role="Vedúca tímu">Vediem tím Steiger Slovensko a mojou víziou je, aby mladí ľudia spoznali skutočného Ježiša, žili autentický vzťah s Bohom a naplnili svoj plný potenciál. Milujem úprimné rozhovory s ľuďmi s rôznymi svetonázormi o viere, pravde a zmysle života. V rámci vedenia sa venujem najmä rozvoju misie, organizácii podujatí a budovaniu strategických spoluprác. Záleží mi na tom, aby boli kresťania povzbudení a vybavení prirodzene zdieľať svoju vieru v každodennom živote a aby sa budovala jednota v cirkvi naprieč rôznymi denomináciami.</div>
+        <div id="bio-kika" data-name="Kika" data-role="Kreatívne evanjelizácie &amp; učeníctvo">Venujem sa tvorbe konceptov pre kreatívne evanjelizácie a rozvoju učeníctva. Baví ma hľadať nové spôsoby, ako prinášať evanjelium ľuďom, ktorí by do kostola možno nikdy neprišli. Teší ma, keď vidím ľudí duchovne rásť, a zároveň keď aj sama vystupujem zo svojej komfortnej zóny a stávam sa osobou, ktorou ma Boh stvoril. Verím, že tie najdôležitejšie rozhovory často začínajú obyčajnou otázkou a vytváram priestor, kde sa ich neboja klásť ani iní. Vo voľnom čase ma nájdete s fotoaparátom v ruke pri objavovaní krásnych miest alebo pri dobrej káve.</div>
+        <div id="bio-saska" data-name="Saška" data-role="Komunikácia &amp; vizuálna identita">Som súčasťou core tímu, kde mám na starosti komunikáciu, sociálne siete a vizuálnu identitu Steiger Slovakia. Zaujíma ma tvorba obsahu s presahom — autentického, odvážneho a stvoreného pre moju generáciu. Prepájať sa s mladými ľuďmi a budovať skutočné komunity je to, čo ma povzbudzuje a motivuje v tejto službe.</div>
+        <div id="bio-katka2" data-name="Katka" data-role="Evanjelizačné nástroje">Volám sa Katka a v Steigeri sa venujem tvorbe evanjelizačných nástrojov. Po umeleckej škole a mojom obrátení som si myslela, že moja cesta s umením sa skončila, no Boh ma cez Steiger priviedol späť k tvorbe. Ukázal mi, že talent nemusí zostať nevyužitý, keď ho odovzdáme do Jeho rúk. Mojou túžbou je rásť v kreativite a tvoriť veci, ktoré budú ľudí viesť bližšie k Bohu.</div>
+        <div id="bio-tomi" data-name="Tomi" data-role="Evanjelista">V tíme Steiger som evanjelista a ten, ktorý dostáva všetky kreatívne materiály, ktoré boli vytvorené, na miesto určenia. To, čo milujem, pre čo som bol stvorený a pre čo žijem, je hlásať ľuďom evanjelium a tým oslavovať Pána Ježiša. Keďže pochádzam z Petržalky, rád chválim Boha gospelovým rapom.</div>
       </div>
     </div>
   </section>
@@ -89,11 +129,12 @@
       </div>
       <nav class="footer__col"><h4>Navigácia</h4><a href="o-nas.html">O nás</a><a href="aktivity.html">Aktivity</a><a href="eventy.html">Eventy</a><a href="zapoj-sa.html">Zapoj sa</a></nav>
       <nav class="footer__col"><h4>Zapoj sa</h4><a href="zapoj-sa.html">Dobrovoľníctvo</a><a href="zapoj-sa.html">Modlitba</a><a href="daruj.html">Daruj</a></nav>
+      <nav class="footer__col"><h4>Materiály</h4><a class="footer__material" href="assets/docs/steiger-streets.pdf" download>⬇ Steiger Streets (PDF)</a><span style="font-size:11px;">Materiál na stiahnutie pre uličnú evanjelizáciu.</span></nav>
       <div class="footer__col"><h4>Kontakt</h4><a href="mailto:slovakia@steiger.org">slovakia@steiger.org</a><span>Hliníky 6997/45<br>Hrnčiarovce nad Parnou</span><div class="footer__social"><a href="https://www.instagram.com/steiger_slovakia/" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.youtube.com/steigerinternational" target="_blank" rel="noopener" aria-label="YouTube">YT</a><a href="https://chat.whatsapp.com/I6XE8vgxHuZ9uproMIFJ6H?mode=gi_t" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a></div></div>
     </div>
     <div class="footer__bottom"><span>© 2026 Steiger Slovensko, o.z. · IČO 57534438</span><span><a href="cookies.html" style="color:inherit;">Cookies</a> · steigerslovensko.sk</span></div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260629"></script>
 </body>
 </html>

@@ -269,3 +269,80 @@ body { padding-top: 0; }
 /* Témy (ak by sa vrátila media stránka) */
 .topic { background: rgba(26,19,19,0.04); border-color: rgba(26,19,19,0.12); color: var(--ink); }
 .topic:hover { background: var(--neon-red); border-color: var(--neon-red); color: #fff; }
+
+/* ===== VIDEO V POZADÍ HERO (o-nas) ===== */
+.page-hero__video {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  background: #13131A;
+}
+.page-hero__bg--overlay {
+  background: linear-gradient(120deg, rgba(10,10,13,0.88) 25%, rgba(19,19,26,0.5) 100%);
+  z-index: 1; pointer-events: none;
+}
+/* Na mobile video vôbec nenačítavame — ostáva len poster (šetrí ~19 MB dát) */
+@media (max-width: 900px) {
+  .page-hero__video { object-position: center; }
+}
+
+/* ===== TÍM — interaktívne opisy (klik na fotku) ===== */
+.member {
+  background: none; border: 0; padding: 0; margin: 0;
+  font: inherit; color: inherit; text-align: center;
+  cursor: pointer; display: block; width: 100%;
+}
+.member__photo {
+  display: block; aspect-ratio: 1; position: relative;
+  margin-bottom: 12px; overflow: hidden;
+  border: 3px solid transparent; transition: border-color .2s, transform .2s var(--ease);
+}
+.member__photo .photo-ph { position: absolute; inset: 0; }
+.member:hover .member__photo { transform: translateY(-4px); border-color: rgba(241,29,0,0.4); }
+.member__name, .member__role { display: block; }
+.member[aria-expanded="true"] .member__photo { border-color: var(--neon-red); }
+.member[aria-expanded="true"] .member__name { color: var(--neon-red); }
+.member::after {
+  content: ''; display: block; width: 0; height: 2px;
+  background: var(--neon-red); margin: 8px auto 0; transition: width .25s var(--ease);
+}
+.member[aria-expanded="true"]::after { width: 40px; }
+
+.team-bio {
+  position: relative; margin-top: 28px; padding: 32px 56px 32px 32px;
+  background: var(--surface); border-left: 4px solid var(--neon-red);
+  animation: bioIn .3s var(--ease);
+}
+@keyframes bioIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.team-bio__name { font-size: clamp(20px, 3vw, 26px); font-weight: 800; text-transform: uppercase; color: var(--ink); }
+.team-bio__role {
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--neon-red); margin: 4px 0 14px;
+}
+.team-bio__text { font-size: 15px; line-height: 1.75; color: var(--text-muted); }
+.team-bio__close {
+  position: absolute; top: 16px; right: 16px;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(26,19,19,0.06); border: 0; cursor: pointer;
+  font-size: 14px; color: var(--ink); line-height: 1;
+  transition: background .2s, color .2s;
+}
+.team-bio__close:hover { background: var(--neon-red); color: #fff; }
+
+@media (max-width: 560px) {
+  .team-bio { padding: 26px 20px; }
+}
+
+/* ===== Stripe placeholder (Daruj) ===== */
+.donate__stripe-note {
+  margin-top: 12px; padding: 12px 14px; font-size: 12px; line-height: 1.6;
+  background: rgba(26,19,19,0.04); border: 1px dashed rgba(26,19,19,0.2);
+  border-radius: 6px; color: var(--text-muted);
+}
+.donate__stripe-note a { color: var(--neon-red); text-decoration: underline; }
+.donate__stripe-badge {
+  display: inline-block; background: var(--brand-yellow); color: var(--ink);
+  font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+  padding: 2px 8px; border-radius: 999px; margin-right: 6px;
+}
+/* Kým je placeholder, tlačidlo nemá klikať nikam */
+[data-stripe-placeholder] { opacity: .85; cursor: not-allowed; }

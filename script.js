@@ -202,3 +202,78 @@
   if (!c) { showBanner(); }
   addFooterLink();
 })();
+
+/* ============================================
+   HERO VIDEO — načíta sa len na desktope
+   (na mobile ostáva poster; šetrí dáta)
+   ============================================ */
+(function () {
+  'use strict';
+  var v = document.querySelector('[data-hero-video]');
+  if (!v) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // ostane poster
+
+  var desktop = window.matchMedia('(min-width: 901px)');
+
+  function load() {
+    if (v.src) return;                       // už načítané
+    v.src = v.getAttribute('data-hero-video');
+    v.preload = 'auto';
+    v.play().catch(function () { /* autoplay zablokovaný -> ostane poster */ });
+  }
+
+  if (desktop.matches) load();
+  // ak sa okno neskôr rozšíri na desktop, video doplníme (na mobile sa nikdy nestiahne)
+  if (desktop.addEventListener) desktop.addEventListener('change', function (e) { if (e.matches) load(); });
+  else if (desktop.addListener) desktop.addListener(function (e) { if (e.matches) load(); });
+})();
+
+/* ============================================
+   TÍM — klik na člena zobrazí opis pod radom
+   ============================================ */
+(function () {
+  'use strict';
+  var team = document.getElementById('team');
+  var panel = document.getElementById('team-bio');
+  if (!team || !panel) return;
+
+  var nameEl = panel.querySelector('.team-bio__name');
+  var roleEl = panel.querySelector('.team-bio__role');
+  var textEl = panel.querySelector('.team-bio__text');
+  var closeBtn = panel.querySelector('.team-bio__close');
+  var current = null;
+
+  function close() {
+    panel.hidden = true;
+    if (current) current.setAttribute('aria-expanded', 'false');
+    current = null;
+  }
+
+  function open(btn) {
+    var bio = document.getElementById(btn.getAttribute('data-bio'));
+    if (!bio) return;
+    team.querySelectorAll('.member').forEach(function (m) { m.setAttribute('aria-expanded', 'false'); });
+    btn.setAttribute('aria-expanded', 'true');
+    nameEl.textContent = bio.getAttribute('data-name') || '';
+    roleEl.textContent = bio.getAttribute('data-role') || '';
+    textEl.textContent = bio.textContent.trim();
+    panel.hidden = false;
+    current = btn;
+  }
+
+  team.querySelectorAll('.member').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (current === btn) { close(); return; }   // druhý klik zavrie
+      open(btn);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) close(); });
+})();
+
+/* Stripe placeholder — kým nie je brána, tlačidlo neposiela nikam */
+(function () {
+  var b = document.querySelector('[data-stripe-placeholder]');
+  if (b) b.addEventListener('click', function (e) { e.preventDefault(); });
+})();

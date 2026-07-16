@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,400..900&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="styles.css?v=20260629">
+  <link rel="stylesheet" href="pages.css?v=20260629">
 </head>
 <body>
 
@@ -91,7 +91,20 @@
           <button class="amount">50 €</button>
           <button class="amount">Vlastná</button>
         </div>
-        <a href="#" class="btn btn--red" id="donateBtn" style="width:100%;text-align:center;padding:16px;">Darovať 15 € jednorazovo →</a>
+        <!-- ============================================================
+             STRIPE — PLACEHOLDER
+             Zatiaľ neaktívne (platobná brána sa dohaduje).
+             AŽ BUDE STRIPE HOTOVÝ:
+               1) nahraď href="#" za Stripe Payment Link / Checkout URL
+               2) zmaž atribút data-stripe-placeholder a blok .donate__stripe-note nižšie
+             ============================================================ -->
+        <a href="#" class="btn btn--red" id="donateBtn" data-stripe-placeholder
+           style="width:100%;text-align:center;padding:16px;">Darovať 15 € jednorazovo →</a>
+        <p class="donate__stripe-note">
+          <span class="donate__stripe-badge">Čoskoro</span>
+          Online platba cez <strong>Stripe</strong> sa pripravuje. Dovtedy pošli dar priamo na účet nižšie —
+          alebo <a href="kontakt.html">nám napíš</a> a poradíme.
+        </p>
         <div class="iban-box">
           <div class="iban-box__label">Organizácia — Steiger Slovensko, o.z.</div>
           <div class="iban-box__num">SK24 8330 0000 0029 0349 6587</div>
@@ -118,12 +131,13 @@
       </div>
       <nav class="footer__col"><h4>Navigácia</h4><a href="o-nas.html">O nás</a><a href="aktivity.html">Aktivity</a><a href="eventy.html">Eventy</a><a href="zapoj-sa.html">Zapoj sa</a></nav>
       <nav class="footer__col"><h4>Zapoj sa</h4><a href="zapoj-sa.html">Dobrovoľníctvo</a><a href="zapoj-sa.html">Modlitba</a><a href="daruj.html">Daruj</a></nav>
+      <nav class="footer__col"><h4>Materiály</h4><a class="footer__material" href="assets/docs/steiger-streets.pdf" download>⬇ Steiger Streets (PDF)</a><span style="font-size:11px;">Materiál na stiahnutie pre uličnú evanjelizáciu.</span></nav>
       <div class="footer__col"><h4>Kontakt</h4><a href="mailto:slovakia@steiger.org">slovakia@steiger.org</a><span>Hliníky 6997/45<br>Hrnčiarovce nad Parnou</span><div class="footer__social"><a href="https://www.instagram.com/steiger_slovakia/" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a href="https://www.youtube.com/steigerinternational" target="_blank" rel="noopener" aria-label="YouTube">YT</a><a href="https://chat.whatsapp.com/I6XE8vgxHuZ9uproMIFJ6H?mode=gi_t" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a></div></div>
     </div>
     <div class="footer__bottom"><span>© 2026 Steiger Slovensko, o.z. · IČO 57534438</span><span><a href="cookies.html" style="color:inherit;">Cookies</a> · steigerslovensko.sk</span></div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260629"></script>
   <script>
     // Donate box interactivity
     (function () {
