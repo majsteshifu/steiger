@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://majsteshifu.github.io/steiger/sitemap.xml
