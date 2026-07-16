@@ -1,5 +1,9 @@
 .DS_Store
+steiger.desktop/
+
+# Veľké médiá ignorujeme, ALE web-assety sú výnimka (musia ísť na GitHub Pages)
 *.mp4
 *.MP4
 *.pdf
-steiger.desktop/
+!assets/video/*.mp4
+!assets/docs/*.pdf
