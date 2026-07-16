@@ -60,25 +60,36 @@
   <section class="section section--almost">
     <div class="section__inner contact">
       <!-- FORM -->
-      <form class="form reveal" onsubmit="event.preventDefault(); this.querySelector('.form__msg').hidden=false;">
+      <!-- ============================================================
+           FORMULÁR — odosiela na slovakia@steiger.org cez FormSubmit.co
+           POZOR: prvá odoslaná správa spustí AKTIVAČNÝ e-mail na
+           slovakia@steiger.org — treba v ňom raz kliknúť na potvrdenie.
+           Potom už správy chodia automaticky.
+           ============================================================ -->
+      <form class="form reveal" action="https://formsubmit.co/slovakia@steiger.org" method="POST">
+        <input type="hidden" name="_subject" value="Nová správa z webu Steiger Slovensko">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://majsteshifu.github.io/steiger/dakujeme.html">
+        <!-- anti-spam pasca (boti ju vyplnia, ľudia nie) -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div>
           <label for="name">Meno *</label>
-          <input id="name" name="name" type="text" required>
+          <input id="name" name="Meno" type="text" required>
         </div>
         <div>
           <label for="email">E-mail *</label>
-          <input id="email" name="email" type="email" required>
+          <input id="email" name="Email" type="email" required>
         </div>
         <div>
           <label for="message">Správa *</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="Sprava" required></textarea>
         </div>
         <label style="display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font-weight:500;color:var(--text-muted);">
           <input type="checkbox" required style="width:auto;margin-top:3px;">
           <span>Súhlasím so spracovaním osobných údajov za účelom odpovede na moju správu.</span>
         </label>
         <button type="submit" class="btn btn--red" style="align-self:flex-start;">Odoslať správu</button>
-        <p class="form__msg" hidden style="color:#1a7a2e;font-weight:700;">Ďakujeme! Ozveme sa ti čo najskôr. ✦</p>
       </form>
 
       <!-- INFO -->
