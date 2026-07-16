@@ -84,7 +84,32 @@ body { padding-top: 0; }
 .act-full__tag { display: inline-block; background: var(--neon-red); color: #fff; font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; margin-bottom: 10px; }
 .act-full__title { font-weight: 800; font-size: 20px; text-transform: uppercase; margin-bottom: 10px; }
 .act-full__desc { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
-.act-full__meta { font-size: 11px; font-weight: 700; color: var(--electric-blue); text-transform: uppercase; letter-spacing: 1px; }
+.act-full__meta { font-size: 11px; font-weight: 700; color: var(--electric-blue); text-transform: uppercase; letter-spacing: 1px; display: block; }
+/* Celá karta je klikateľná (odkaz na podstránku aktivity) */
+a.act-full { text-decoration: none; color: inherit; transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+a.act-full:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,19,19,0.15); }
+a.act-full .photo-ph { transition: transform .4s var(--ease); }
+a.act-full:hover .photo-ph { transform: scale(1.05); }
+.act-full__more { display: inline-block; margin-top: 14px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--neon-red); }
+a.act-full:hover .act-full__more { color: var(--ink); }
+
+/* ===== Piliere vízie ===== */
+.pillar-sub {
+  margin: 26px 0 12px; font-size: 12px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1.5px; color: var(--neon-red);
+}
+.pillar-sep { border: 0; border-top: 1px solid rgba(255,255,255,0.12); margin: 48px 0; }
+.section--black .pillar-sep, .section--yellow .pillar-sep { border-top-color: rgba(26,19,19,0.12); }
+
+/* ===== Veľký citát v texte ===== */
+.quote-big {
+  margin: 28px 0; padding: 20px 0 20px 24px;
+  border-left: 4px solid var(--neon-red);
+  font-size: clamp(18px, 2.6vw, 24px); font-weight: 800;
+  line-height: 1.4; text-transform: uppercase;
+}
+.section--almost .quote-big, .section--blue .quote-big { color: #fff; }
+.section--black .quote-big { color: var(--ink); }
 
 /* ===== DONATE ===== */
 .donate { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 64px); align-items: start; }
