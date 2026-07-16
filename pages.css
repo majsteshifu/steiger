@@ -95,14 +95,14 @@ body { padding-top: 0; }
 .amounts { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
 .amount {
   padding: 12px 22px; border: 2px solid rgba(255,255,255,0.2); background: transparent;
-  color: var(--white); font-family: 'Montserrat'; font-size: 15px; font-weight: 700; cursor: pointer;
+  color: var(--white); font-family: 'Rubik'; font-size: 15px; font-weight: 700; cursor: pointer;
   border-radius: 999px; transition: all .2s;
 }
 .amount:hover, .amount.is-active { background: var(--neon-red); border-color: var(--neon-red); }
 .toggle { display: flex; gap: 10px; margin-bottom: 20px; }
 .toggle button {
   flex: 1; padding: 11px; border: 2px solid rgba(255,255,255,0.2); background: transparent;
-  color: rgba(255,255,255,0.7); font-family: 'Montserrat'; font-size: 11px; font-weight: 800;
+  color: rgba(255,255,255,0.7); font-family: 'Rubik'; font-size: 11px; font-weight: 800;
   text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all .2s;
   border-radius: 999px;
 }
@@ -118,7 +118,7 @@ body { padding-top: 0; }
 .form input, .form textarea {
   width: 100%; padding: 13px 16px; background: var(--almost-black);
   border: 1px solid rgba(255,255,255,0.12); color: var(--white);
-  font-family: 'Montserrat'; font-size: 14px; transition: border-color .2s;
+  font-family: 'Rubik'; font-size: 14px; transition: border-color .2s;
 }
 .form input:focus, .form textarea:focus { outline: none; border-color: var(--neon-red); }
 .form textarea { resize: vertical; min-height: 130px; }
@@ -211,7 +211,7 @@ body { padding-top: 0; }
 /* ===== LEGAL / COOKIES PAGE ===== */
 .legal { max-width: 760px; }
 .legal__updated { font-size: 12px; color: var(--text-muted); margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.legal__h { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(20px, 3vw, 26px); text-transform: uppercase; color: var(--white); margin: 36px 0 14px; }
+.legal__h { font-family: 'Rubik', sans-serif; font-weight: 800; font-size: clamp(20px, 3vw, 26px); text-transform: uppercase; color: var(--white); margin: 36px 0 14px; }
 .legal p { color: var(--text-muted); font-size: 15px; line-height: 1.7; margin-bottom: 14px; }
 .legal a { color: var(--brand-yellow); text-decoration: underline; }
 .legal__card { background: rgba(255,255,255,0.03); border-left: 3px solid var(--neon-red); border-radius: 0 4px 4px 0; padding: 20px 22px; margin: 18px 0; }
@@ -221,3 +221,51 @@ body { padding-top: 0; }
 .legal ul li { font-size: 14px; color: var(--text-muted); padding: 8px 0 8px 18px; position: relative; line-height: 1.6; border-bottom: 1px solid rgba(255,255,255,0.04); }
 .legal ul li::before { content: '///'; position: absolute; left: 0; color: var(--neon-red); font-size: 9px; top: 11px; }
 .legal strong { color: var(--white); }
+
+/* ============================================================
+   SVETLÁ TÉMA — prepisy pre podstránky
+   (pages.css sa načítava po styles.css, preto musia byť tu)
+   ============================================================ */
+.section--black  { background: var(--cream); color: var(--ink); }
+.section--almost { background: var(--cream-warm); color: var(--ink); }
+.section--blue   { background: var(--cream); color: var(--ink); }
+.lead { color: var(--text-muted); }
+
+/* Karty */
+.value, .act-full, .event, .donate__box, .media-card { background: var(--surface); }
+.value__title, .act-full__title, .event__title, .member__name, .media-card__title { color: var(--ink); }
+.value__desc, .act-full__desc, .event__meta, .member__role, .media-card__desc { color: var(--text-muted); }
+.value__num { color: rgba(26,19,19,0.22); }
+.act-full__meta { color: var(--neon-red); }
+.event__mon { color: var(--text-muted); }
+.event { background: var(--surface); border-left-color: var(--neon-red); }
+.event:hover { background: #fff; box-shadow: 0 6px 20px rgba(26,19,19,0.08); }
+
+/* Daruj */
+.donate__impact-item { border-bottom-color: rgba(26,19,19,0.1); }
+.donate__impact-text { color: var(--text-muted); }
+.amount { color: var(--ink); border-color: rgba(26,19,19,0.25); }
+.amount:hover, .amount.is-active { color: #fff; }
+.toggle button { color: var(--text-muted); border-color: rgba(26,19,19,0.25); }
+.toggle button.is-active { color: #fff; }
+.iban-box { background: rgba(26,19,19,0.04); border-color: rgba(26,19,19,0.12); }
+.iban-box__num { color: var(--ink); }
+
+/* Kontakt */
+.form input, .form textarea { background: #fff; border-color: rgba(26,19,19,0.2); color: var(--ink); }
+.form label { color: var(--text-muted); }
+.contact__info-item p, .contact__info-item a { color: var(--text-muted); }
+.contact__info .footer__social a { border-color: rgba(26,19,19,0.2); color: var(--text-muted); }
+.contact__info .footer__social a:hover { border-color: var(--neon-red); color: var(--neon-red); }
+
+/* Cookies / legal */
+.legal p, .legal ul li, .legal__updated { color: var(--text-muted); }
+.legal__h, .legal strong, .legal__card h3 { color: var(--ink); }
+.legal__card { background: rgba(26,19,19,0.04); }
+.legal ul li { border-bottom-color: rgba(26,19,19,0.08); }
+.legal__updated { border-bottom-color: rgba(26,19,19,0.12); }
+.legal a { color: var(--neon-red); }
+
+/* Témy (ak by sa vrátila media stránka) */
+.topic { background: rgba(26,19,19,0.04); border-color: rgba(26,19,19,0.12); color: var(--ink); }
+.topic:hover { background: var(--neon-red); border-color: var(--neon-red); color: #fff; }
