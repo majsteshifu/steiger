@@ -660,3 +660,20 @@ body { background: var(--cream); color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   .slogan-tape__track { animation: none; }
 }
+
+/* ===== NEWSLETTER (Mailchimp) ===== */
+.newsletter { background: var(--indie-blue); padding: clamp(56px, 9vw, 110px) var(--pad); text-align: center; }
+.newsletter__inner { max-width: 640px; margin: 0 auto; }
+.newsletter__title { font-weight: 900; font-size: clamp(26px, 4vw, 44px); line-height: 1.05; text-transform: uppercase; color: #fff; margin: 12px 0; }
+.newsletter__sub { color: rgba(255,255,255,0.72); font-size: clamp(14px, 2vw, 17px); margin-bottom: 28px; }
+.newsletter__form { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.newsletter__form input[type="email"] {
+  flex: 1 1 300px; min-width: 0; padding: 15px 20px; border-radius: 999px;
+  border: 1.5px solid rgba(255,255,255,0.28); background: rgba(255,255,255,0.06);
+  color: #fff; font: inherit; font-size: 15px;
+}
+.newsletter__form input[type="email"]::placeholder { color: rgba(255,255,255,0.5); }
+.newsletter__form input[type="email"]:focus { outline: none; border-color: var(--neon-red); background: rgba(255,255,255,0.1); }
+.newsletter__note { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.45); }
+.newsletter__note a { color: rgba(255,255,255,0.72); text-decoration: underline; }
+@media (max-width: 520px) { .newsletter__form .btn { width: 100%; } }

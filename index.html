@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,400..900&family=Bebas+Neue&family=Big+Shoulders+Stencil+Display:wght@700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=202607171019">
+  <link rel="stylesheet" href="styles.css?v=202607221315">
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -277,6 +277,29 @@
     </div>
   </section>
 
+  <!-- ===== NEWSLETTER (Mailchimp) =====
+       Formulár POSTuje priamo do Mailchimpu (list steiger.us6, id 74c5df345f).
+       Zmena zoznamu = uprav action URL a názov honeypot poľa (b_...).
+       Otvára sa v novom okne, kde Mailchimp zobrazí potvrdenie. -->
+  <section class="newsletter" id="newsletter">
+    <div class="newsletter__inner reveal">
+      <span class="tag tag--blue">/// Novinky</span>
+      <h2 class="newsletter__title">Zostaň v obraze</h2>
+      <p class="newsletter__sub">Nechaj nám e-mail a pošleme ti novinky z misie — eventy, príbehy a modlitebné témy priamo do schránky.</p>
+      <form class="newsletter__form"
+            action="https://steiger.us6.list-manage.com/subscribe/post?u=ab11b1282c5be2834c848a399&amp;id=74c5df345f"
+            method="post" target="_blank" rel="noopener" novalidate>
+        <input type="email" name="EMAIL" required placeholder="tvoj@email.sk" aria-label="Tvoj e-mail">
+        <!-- Mailchimp anti-bot honeypot — nechať prázdne a skryté -->
+        <div style="position:absolute;left:-5000px" aria-hidden="true">
+          <input type="text" name="b_ab11b1282c5be2834c848a399_74c5df345f" tabindex="-1" value="">
+        </div>
+        <button type="submit" class="btn btn--red">Odoberať →</button>
+      </form>
+      <p class="newsletter__note">Odhlásiť sa môžeš kedykoľvek. Rešpektujeme tvoje <a href="ochrana-osobnych-udajov.html">súkromie</a>.</p>
+    </div>
+  </section>
+
   <!-- ===== SUPPORT / FINAL CTA ===== -->
   <section class="cta" id="support">
     <div class="cta__wrap"></div>
@@ -319,6 +342,6 @@
     </defs>
   </svg>
 
-  <script src="script.js?v=202607171019"></script>
+  <script src="script.js?v=202607221315"></script>
 </body>
 </html>
