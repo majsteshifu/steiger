@@ -110,18 +110,16 @@
           <button class="amount">Vlastná</button>
         </div>
         <!-- ============================================================
-             STRIPE — PLACEHOLDER
-             Zatiaľ neaktívne (platobná brána sa dohaduje).
-             AŽ BUDE STRIPE HOTOVÝ:
-               1) nahraď href="#" za Stripe Payment Link / Checkout URL
-               2) zmaž atribút data-stripe-placeholder a blok .donate__stripe-note nižšie
+             STRIPE — aktívne platobné odkazy.
+             URL sa nastavuje dynamicky podľa sumy a režimu (viď skript nižšie).
+             Mapa odkazov je v <script> na konci stránky — tam sa menia sumy/URL.
              ============================================================ -->
-        <a href="#" class="btn btn--red" id="donateBtn" data-stripe-placeholder
+        <a href="https://buy.stripe.com/9B63cwddFgoU2oP17JbV606" class="btn btn--red" id="donateBtn"
+           target="_blank" rel="noopener"
            style="width:100%;text-align:center;padding:16px;">Darovať 15 € jednorazovo →</a>
         <p class="donate__stripe-note">
-          <span class="donate__stripe-badge">Čoskoro</span>
-          Online platba cez <strong>Stripe</strong> sa pripravuje. Dovtedy pošli dar priamo na účet nižšie —
-          alebo <a href="kontakt.html">nám napíš</a> a poradíme.
+          <span class="donate__stripe-badge">🔒 Bezpečné</span>
+          Platba cez <strong>Stripe</strong> — kartou, Apple&nbsp;Pay či Google&nbsp;Pay. Otvorí sa v novom okne.
         </p>
         <div class="iban-box">
           <div class="iban-box__label">Organizácia — Staiger Slovensko, o.z.</div>
@@ -156,13 +154,42 @@
 
   <script src="script.js?v=202607171019"></script>
   <script>
-    // Donate box interactivity
+    // Donate box — mapa Stripe platobných odkazov + interaktivita.
+    // Zmena sumy/URL: uprav objekt LINKS nižšie.
     (function () {
-      var amount = '15 €', mode = 'jednorazovo';
+      var LINKS = {
+        once: {
+          '5 €':     'https://buy.stripe.com/3cI8wQehJ5Kg4wX7w7bV605',
+          '15 €':    'https://buy.stripe.com/9B63cwddFgoU2oP17JbV606',
+          '25 €':    'https://buy.stripe.com/4gM3cwddFegM0gH5nZbV607',
+          '50 €':    'https://buy.stripe.com/bJeeVe5Lda0w5B1eYzbV608',
+          'Vlastná': 'https://buy.stripe.com/9B6dRa1uXfkQ5B1bMnbV600'
+        },
+        monthly: {
+          '5 €':  'https://buy.stripe.com/28E00k0qTdcI8Nd3fRbV604',
+          '15 €': 'https://buy.stripe.com/00w00k7Tl1u0bZpg2DbV603',
+          '25 €': 'https://buy.stripe.com/dRm00kflNc8E8NddUvbV602',
+          '50 €': 'https://buy.stripe.com/9B63cwflN1u01kL4jVbV601'
+          // Pozn.: pravidelnú platbu vlastnou sumou Stripe link nepokrýva -> fallback na kontakt.
+        }
+      };
+      var amount = '15 €', modeKey = 'once';
       var btn = document.getElementById('donateBtn');
       function update() {
-        var label = amount === 'Vlastná' ? 'Darovať' : 'Darovať ' + amount;
-        btn.textContent = label + ' ' + mode + ' →';
+        var url = LINKS[modeKey][amount];
+        var modeLabel = modeKey === 'monthly' ? 'mesačne' : 'jednorazovo';
+        if (url) {
+          btn.href = url;
+          btn.target = '_blank';
+          btn.rel = 'noopener';
+          var label = amount === 'Vlastná' ? 'Darovať' : 'Darovať ' + amount;
+          btn.textContent = label + ' ' + modeLabel + ' →';
+        } else {
+          // mesačne + Vlastná: nemáme Stripe link -> nasmeruj na kontakt
+          btn.href = 'kontakt.html';
+          btn.removeAttribute('target');
+          btn.textContent = 'Vlastná mesačná suma — napíš nám →';
+        }
       }
       document.querySelectorAll('.amount').forEach(function (a) {
         a.addEventListener('click', function () {
@@ -176,10 +203,11 @@
         t.addEventListener('click', function () {
           document.querySelectorAll('.toggle button').forEach(function (x) { x.classList.remove('is-active'); });
           t.classList.add('is-active');
-          mode = t.dataset.toggle === 'monthly' ? 'mesačne' : 'jednorazovo';
+          modeKey = t.dataset.toggle === 'monthly' ? 'monthly' : 'once';
           update();
         });
       });
+      update();
     })();
   </script>
 </body>
