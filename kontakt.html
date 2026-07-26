@@ -87,7 +87,8 @@
       <form class="form reveal" action="https://formsubmit.co/steiger.slovakia@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Nová správa z webu Steiger Slovensko">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
+        <!-- reCAPTCHA (FormSubmit): po odoslaní sa zobrazí overenie „nie som robot". -->
+        <input type="hidden" name="_captcha" value="true">
         <input type="hidden" name="_next" value="https://majsteshifu.github.io/steiger/dakujeme.html">
         <!-- anti-spam pasca: skrytá mimo obrazovky (nie display:none, ktoré boti obchádzajú).
              Ľudia ju nevidia; boti ju vyplnia a FormSubmit takú správu zahodí. -->
