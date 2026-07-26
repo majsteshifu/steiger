@@ -89,8 +89,12 @@
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://majsteshifu.github.io/steiger/dakujeme.html">
-        <!-- anti-spam pasca (boti ju vyplnia, ľudia nie) -->
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- anti-spam pasca: skrytá mimo obrazovky (nie display:none, ktoré boti obchádzajú).
+             Ľudia ju nevidia; boti ju vyplnia a FormSubmit takú správu zahodí. -->
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+          <label>Toto pole nevypĺňaj</label>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+        </div>
         <div>
           <label for="name">Meno *</label>
           <input id="name" name="Meno" type="text" required>
@@ -163,5 +167,23 @@
   </footer>
 
   <script src="script.js?v=202607221315"></script>
+  <!-- Anti-bot ochrana formulára: časová pasca + poistka honeypotu.
+       Legitímny človek vypĺňa formulár dlhšie ako 3 s a honeypot nechá prázdny,
+       takže sa ho to nikdy nedotkne. Botom, ktoré odošlú okamžite, sa odoslanie zablokuje. -->
+  <script>
+    (function () {
+      var form = document.querySelector('form.form');
+      if (!form) return;
+      var loadedAt = Date.now();
+      form.addEventListener('submit', function (e) {
+        var honey = form.querySelector('input[name="_honey"]');
+        var tooFast = (Date.now() - loadedAt) < 3000;
+        if ((honey && honey.value.trim() !== '') || tooFast) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
