@@ -107,9 +107,10 @@ a.act-full:hover .act-full__more { color: var(--ink); }
   border-left: 4px solid var(--neon-red);
   font-size: clamp(18px, 2.6vw, 24px); font-weight: 800;
   line-height: 1.4; text-transform: uppercase;
+  /* Brandová červená — čitateľná na svetlom aj tmavom, konzistentná so značkou.
+     (Predtým: biela na svetlých sekciách = nečitateľné.) */
+  color: var(--neon-red);
 }
-.section--almost .quote-big, .section--blue .quote-big { color: #fff; }
-.section--black .quote-big { color: var(--ink); }
 
 /* ===== DONATE ===== */
 .donate { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 64px); align-items: start; }
