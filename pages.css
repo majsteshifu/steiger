@@ -372,3 +372,32 @@ a.act-full:hover .act-full__more { color: var(--ink); }
 }
 /* Kým je placeholder, tlačidlo nemá klikať nikam */
 [data-stripe-placeholder] { opacity: .85; cursor: not-allowed; }
+
+/* ===== GALÉRIA — klikateľná + lightbox ===== */
+.gallery { grid-auto-flow: dense; }
+.gallery--clickable .gallery__item { cursor: pointer; transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+.gallery--clickable .gallery__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.28); }
+.gallery--clickable .gallery__item:focus-visible { outline: 3px solid var(--neon-red); outline-offset: 2px; }
+
+.lightbox { position: fixed; inset: 0; z-index: 1000; background: rgba(10,10,13,0.93);
+  display: none; align-items: center; justify-content: center; padding: 24px; }
+.lightbox.is-open { display: flex; animation: lb-fade .2s var(--ease); }
+@keyframes lb-fade { from { opacity: 0; } to { opacity: 1; } }
+.lightbox__img { max-width: 92vw; max-height: 86vh; object-fit: contain; box-shadow: 0 24px 70px rgba(0,0,0,0.6); }
+.lightbox__close, .lightbox__nav {
+  position: absolute; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25);
+  color: #fff; cursor: pointer; border-radius: 999px; line-height: 1;
+  display: flex; align-items: center; justify-content: center; transition: background .2s, transform .2s;
+}
+.lightbox__close:hover, .lightbox__nav:hover { background: var(--neon-red); border-color: var(--neon-red); }
+.lightbox__close { top: 20px; right: 24px; width: 44px; height: 44px; font-size: 20px; }
+.lightbox__nav { top: 50%; transform: translateY(-50%); width: 52px; height: 52px; font-size: 30px; padding-bottom: 4px; }
+.lightbox__nav--prev { left: 16px; }
+.lightbox__nav--next { right: 16px; }
+.lightbox__nav:hover { transform: translateY(-50%) scale(1.08); }
+.lightbox__counter { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 700; letter-spacing: 1px; }
+@media (max-width: 560px) {
+  .lightbox__nav { width: 44px; height: 44px; font-size: 24px; }
+  .lightbox__nav--prev { left: 8px; } .lightbox__nav--next { right: 8px; }
+}

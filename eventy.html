@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,400..900&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202607271624">
-  <link rel="stylesheet" href="pages.css?v=202607271624">
+  <link rel="stylesheet" href="styles.css?v=202607271632">
+  <link rel="stylesheet" href="pages.css?v=202607271632">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -127,19 +127,17 @@
     <div class="section__inner">
       <span class="tag tag--blue">/// Z minulých eventov</span>
       <h2 class="h2 text-white">Galéria</h2>
-      <div class="gallery reveal">
-        <div class="gallery__item gallery__item--lg"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-2.jpg')">Foto: Outreach</div></div>
-        <div class="gallery__item"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-3.jpg')">Foto</div></div>
-        <div class="gallery__item"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-5.jpg')">Foto</div></div>
-        <div class="gallery__item"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-6.jpg')">Foto</div></div>
-        <div class="gallery__item"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-7.jpg')">Foto</div></div>
-        <div class="gallery__item gallery__item--wide"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-8.jpg')">Foto: Festival</div></div>
-        <div class="gallery__item gallery__item--wide"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-1.jpg')">Foto</div></div>
-        <div class="gallery__item"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-3.jpg')">Foto</div></div>
-        <div class="gallery__item"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-7.jpg')">Foto</div></div>
-        <div class="gallery__item gallery__item--lg"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-5.jpg')">Foto</div></div>
-        <div class="gallery__item"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-2.jpg')">Foto</div></div>
-        <div class="gallery__item"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/photo-6.jpg')">Foto</div></div>
+      <!-- Klikni na fotku = otvorí sa lightbox s preklikávaním (viď skript nižšie). -->
+      <div class="gallery gallery--clickable reveal">
+        <div class="gallery__item gallery__item--lg" data-full="assets/img/gallery-1.jpg" role="button" tabindex="0" aria-label="Zväčšiť fotku 1"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/gallery-1.jpg')"></div></div>
+        <div class="gallery__item" data-full="assets/img/gallery-2.jpg" role="button" tabindex="0" aria-label="Zväčšiť fotku 2"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/gallery-2.jpg')"></div></div>
+        <div class="gallery__item" data-full="assets/img/gallery-3.jpg" role="button" tabindex="0" aria-label="Zväčšiť fotku 3"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/gallery-3.jpg')"></div></div>
+        <div class="gallery__item gallery__item--wide" data-full="assets/img/gallery-8.jpg" role="button" tabindex="0" aria-label="Zväčšiť fotku 4"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/gallery-8.jpg')"></div></div>
+        <div class="gallery__item" data-full="assets/img/gallery-4.jpg" role="button" tabindex="0" aria-label="Zväčšiť fotku 5"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/gallery-4.jpg')"></div></div>
+        <div class="gallery__item" data-full="assets/img/gallery-5.jpg" role="button" tabindex="0" aria-label="Zväčšiť fotku 6"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/gallery-5.jpg')"></div></div>
+        <div class="gallery__item gallery__item--wide" data-full="assets/img/gallery-9.jpg" role="button" tabindex="0" aria-label="Zväčšiť fotku 7"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/gallery-9.jpg')"></div></div>
+        <div class="gallery__item gallery__item--lg" data-full="assets/img/gallery-6.jpg" role="button" tabindex="0" aria-label="Zväčšiť fotku 8"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/gallery-6.jpg')"></div></div>
+        <div class="gallery__item" data-full="assets/img/gallery-7.jpg" role="button" tabindex="0" aria-label="Zväčšiť fotku 9"><div class="photo-ph photo-ph--img" style="background-image:url('assets/img/gallery-7.jpg')"></div></div>
       </div>
       <p style="margin-top:20px;font-size:13px;color:var(--text-muted);text-align:center;">Viac fotiek nájdeš na našom <a href="https://www.instagram.com/steiger_slovakia/" target="_blank" rel="noopener" style="color:var(--neon-red);">Instagrame</a>.</p>
     </div>
@@ -166,6 +164,44 @@
     <div class="footer__bottom"><span>© 2026 Staiger Slovensko, o.z. · IČO 57534438</span><span><a href="ochrana-osobnych-udajov.html" style="color:inherit;">Ochrana údajov</a> · <a href="cookies.html" style="color:inherit;">Cookies</a> · steigerslovensko.sk</span><a class="footer__made" href="https://www.benjaminbaliak.sk" target="_blank" rel="noopener">Made by Ujčok</a></div>
   </footer>
 
-  <script src="script.js?v=202607271624"></script>
+  <!-- ===== LIGHTBOX pre galériu ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Galéria fotiek">
+    <button class="lightbox__close" type="button" aria-label="Zavrieť">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Predchádzajúca fotka">‹</button>
+    <img class="lightbox__img" src="" alt="Fotka z eventu Steiger">
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Ďalšia fotka">›</button>
+    <div class="lightbox__counter"></div>
+  </div>
+
+  <script src="script.js?v=202607271632"></script>
+  <!-- Lightbox: klik na fotku v galérii ju otvorí na celú obrazovku s preklikávaním (šípky, klávesnica, Esc). -->
+  <script>
+    (function () {
+      var items = [].slice.call(document.querySelectorAll('.gallery__item[data-full]'));
+      if (!items.length) return;
+      var urls = items.map(function (it) { return it.getAttribute('data-full'); });
+      var lb = document.getElementById('lightbox');
+      var img = lb.querySelector('.lightbox__img');
+      var counter = lb.querySelector('.lightbox__counter');
+      var idx = 0;
+      function show(i) { idx = (i + urls.length) % urls.length; img.src = urls[idx]; counter.textContent = (idx + 1) + ' / ' + urls.length; }
+      function open(i) { show(i); lb.classList.add('is-open'); lb.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+      function close() { lb.classList.remove('is-open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+      items.forEach(function (it, i) {
+        it.addEventListener('click', function () { open(i); });
+        it.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); } });
+      });
+      lb.querySelector('.lightbox__close').addEventListener('click', close);
+      lb.querySelector('.lightbox__nav--prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+      lb.querySelector('.lightbox__nav--next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+      lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('is-open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') show(idx - 1);
+        else if (e.key === 'ArrowRight') show(idx + 1);
+      });
+    })();
+  </script>
 </body>
 </html>
