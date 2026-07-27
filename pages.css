@@ -278,7 +278,7 @@ a.act-full:hover .act-full__more { color: var(--ink); }
 .iban-box__num { color: var(--ink); }
 
 /* Kontakt */
-.form input, .form textarea { background: #fff; border-color: rgba(26,19,19,0.2); color: var(--ink); }
+.form input, .form textarea { background: #fff; border: 1.5px solid rgba(26,19,19,0.4); color: var(--ink); }
 .form label { color: var(--text-muted); }
 .contact__info-item p, .contact__info-item a { color: var(--text-muted); }
 .contact__info .footer__social a { border-color: rgba(26,19,19,0.2); color: var(--text-muted); }
